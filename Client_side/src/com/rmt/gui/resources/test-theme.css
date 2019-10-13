@@ -1,0 +1,247 @@
+@font-face{
+    font-family: 'Montserrat';
+    src: url('Montserrat.ttf');
+}
+
+* {
+  -fx-primary: #265687;
+  -fx-primary-blured: rgba(38, 86, 135, 0.5);
+  -fx-secondary: #d2d7f7;
+  -fx-light-blue: rgb(62, 98, 125);
+  -fx-correct: rgba(66, 145, 39);
+  -fx-wrong: rgba(145, 39, 39);
+  -fx-pressed: rgba(255, 191, 0, 0.9);
+
+}
+
+.root{
+    -fx-background-color: #539fdb,
+                          linear-gradient(#cce0f0, #8bc3f0),
+                          linear-gradient(#a4ceed, #2f4b8f);
+
+    -fx-font-family: Courier New;
+}
+
+*.text{
+    -fx-effect: dropshadow( gaussian, rgba(51,51,51), 5, 0.1, 1, 1);
+    -fx-stroke: rgba(51,51,51);
+    -fx-stroke-width: 0.1;
+}
+
+.glyph-icon{
+    -fx-fill: -fx-secondary;
+}
+
+.button-large{
+    -jfx-button-type: RAISED;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-primary;
+    -fx-padding: 10;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 30px;
+    -fx-text-fill: -fx-secondary;
+}
+
+.button-medium{
+    -jfx-button-type: RAISED;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-primary;
+    -fx-padding: 10;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 24px;
+    -fx-text-fill: -fx-secondary;
+}
+
+.button-medium:hover, .button-medium:focus, .button-large:hover, .button-large:focus{
+    -fx-border-color: rgb(210,215,247,0.1);
+    -fx-background-color: rgb(210,215,247,0.3);
+    -fx-text-fill: #163452;
+
+}
+
+.button-medium:hover *.text, .button-large:hover *.text{
+    -fx-stroke: -fx-secondary;
+    -fx-stroke-width: 0.01;
+    -fx-effect: dropshadow( gaussian, rgb(255, 255, 255), 3, 0.1, 1, 1);
+}
+
+.jfx-text-field, .jfx-password-field{
+    -fx-text-fill: -fx-secondary;
+    -jfx-focus-color: -fx-primary;
+    -jfx-unfocus-color: -fx-secondary;
+    -fx-prompt-text-fill: -fx-secondary;
+    -fx-font-size: 18;
+}
+
+.jfx-text-field:focus *.prompt-text{
+     -fx-stroke: -fx-secondary;
+     -fx-stroke-width: 0.01;
+     -fx-effect: dropshadow( gaussian, rgb(255, 255, 255), 3, 0.1, 1, 1);
+}
+
+.incorrect-info{
+    -jfx-focus-color: -fx-wrong;
+    -jfx-unfocus-color: -fx-wrong;
+}
+
+#invalidPassword, #invalidUsername{
+    -fx-text-fill: -fx-wrong;
+    -fx-font-weight: bold;
+    -fx-text-size: 8pt;
+}
+
+#invalidPassword *.text, #invalidUsername *.text{
+     -fx-stroke: -fx-secondary;
+     -fx-stroke-width: 0.01;
+     -fx-effect: dropshadow( gaussian, rgb(196, 159, 159), 0, 0, 0, 0);
+
+}
+
+.jfx-list-view{
+    -fx-background-color: -fx-primary;
+    -fx-border-weight: 0;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+.jfx-list-cell:filled:selected:focused, .jfx-list-cell:filled:selected{
+     -fx-background-color: -fx-primary;
+     -fx-text-fill: -fx-secondary;
+
+}
+
+.jfx-list-cell{
+    -fx-alignment: center;
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 20px;
+    -fx-border-weight: 0;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+.jfx-list-cell:odd{
+     -fx-background-color: -fx-primary;
+}
+
+.jfx-list-cell:even{
+     -fx-background-color: -fx-primary;
+}
+
+#activePlayersListView .list-cell:empty{
+    -fx-background-color: transparent;
+}
+
+#activePlayersListView .jfx-list-cell:selected:focused{
+    -fx-background-color: -fx-light-blue;
+    -fx-text-fill: -fx-secondary;
+    -fx-text-alignment: center;
+    -fx-font-family: Liberation Sans;
+    -fx-font-size: 16;
+}
+
+.chase-step-blue {
+    -fx-focus-traversable:false;
+    -fx-opacity: 1.0;
+    -fx-min-width: 350;
+    -fx-min-height: 50;
+    -fx-background-color:
+            #000000,
+            linear-gradient(#7ebcea, #2f4b8f),
+            linear-gradient(#426ab7, #263e75),
+            linear-gradient(#395cab, #223768);
+        -fx-background-insets: 0,1,2,3;
+        -fx-background-radius: 3,2,2,2;
+        -fx-text-fill: #f7f2f2;
+        -fx-alignment: center;
+
+}
+
+.chase-step-blue *.text{
+        -fx-font-size: 30px;
+        -fx-font-weight: bold;
+        -fx-effect: dropshadow( gaussian, rgba(51,51,51), 6, 0.5, 1, 1);
+        -fx-stroke: rgba(51,51,51);
+        -fx-stroke-width: 0.5;
+}
+
+.chase-step-red{
+    -fx-min-width: 350;
+    -fx-min-height: 50;
+    -fx-background-color:
+            #000000,
+            linear-gradient(#ea7e7e, #8f2f2f),
+            linear-gradient(#b74242, #752626),
+            linear-gradient(#ab3939, #682222);
+        -fx-background-insets: 0,1,2,3;
+        -fx-background-radius: 3,2,2,2;
+        -fx-alignment: center;
+        -fx-text-fill: #f7f2f2;
+}
+
+.chase-step-red *.text{
+        -fx-font-size: 30px;
+        -fx-font-weight: bold;
+        -fx-effect: dropshadow( gaussian, rgba(51,51,51), 6, 0.5, 1, 1);
+        -fx-stroke: rgba(51,51,51);
+        -fx-stroke-width: 0.5;
+}
+
+.answer-button{
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 14pt;
+    -jfx-wrap-text: true;
+}
+
+.pressed{
+    -fx-border-color: -fx-pressed;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+.correct-answer{
+    -fx-background-color: -fx-correct;
+    -fx-background-radius: 10px;
+}
+
+.wrong-answer{
+    -fx-background-color: -fx-wrong;
+    -fx-background-radius: 10px;
+}
+
+.text-area, .text-area .viewport, .text-area .content {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 14pt;
+}
+
+.text-area{
+    -fx-border-color: -fx-secondary;
+    -fx-border-width: 0;
+    -fx-border-radius: 6px;
+}
+
+.text-area *.text{
+    -fx-text-alignment: center;
+    -fx-font-family: Courier New;
+}
+#timerLabel{
+    -fx-text-fill: -fx-secondary;
+    -fx-font-size: 24pt;
+    -fx-background-radius: 60px;
+    -fx-background-insets: -20px;
+    -fx-border-color: -fx-secondary;
+    -fx-border-width: 0;
+    -fx-background-color: rgb(210,215,247,0.3);
+}
+
+.progress-indicator{
+    -fx-progress-color: -fx-secondary;
+}
+
+#gameFinishedMessage{
+    -fx-font-size: 50px;
+    -fx-text-fill: -fx-secondary;
+    -fx-text-alignment: center;
+}
